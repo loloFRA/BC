@@ -29,100 +29,596 @@
     <!-- CSS local -->
     <link rel="stylesheet" href="testBC.css">
 
+
     <!-- font-awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
 
     <!-- Favicon -->
     <link rel="icon" href="/path/to/favicon.ico" type="image/x-icon">
 
   </head>
   <body>
-    <!-- Votre contenu ici -->
-    <div class="class="container>
-      <div class="navbar navbar-expand-lg navbar-dark  justify-content-center" style="background-color: #1d1d1d;">
-        
-          <span class="navbar-text d-none d-lg-block" style="font-size: 1.5em">
-              BIENES CONNECT
-            </span>
-            <img class="navbar-text d-none d-lg-block" src="imgBC.png" alt="" width="45" height="60" style="margin-left: 20px;">
+    
+    <div><!-- div body -->
+
+    <!-- Popup -->
+    <div class="popup-container" id="popup">
+        <div class="popup-content">
+            <h4>Aucune utilisation de cookies</h4>
+            <p>
+                Ce site ne collecte ni n'utilise de cookies pour suivre vos activités. Bonne navigation !
+            </p>
+            <button class="btn btn-primary" id="closePopup">OK, Merci</button>
         </div>
-      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #1d1d1d;">
-        <div class="container-fluid">            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-bars text-white"></i>
-            </button>
-            <span class="navbar-text d-lg-none">
-              BIENES CONNECT
-            </span>
-            <img class="d-lg-none" src="imgBC.png" alt="" width="30" height="30">
-            <div class="collapse navbar-collapse justify-content-center" id="navbarText">
-              <ul class="navbar-nav ">
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">Accueil</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Vidéosurveillance</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Controle d'accès</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Electricité</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Interphone</a>
-                </li>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Domotique</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Antenne</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Nos réalisation
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Vidéo surveillance</a></li>
-                    <li><a class="dropdown-item" href="#">Controle d'accès</a></li>
-                    <li><a class="dropdown-item" href="#">Electricité</a></li>
-                    <li><a class="dropdown-item" href="#">Interphone</a></li>
-                    <li><a class="dropdown-item" href="#">Domotique</a></li>
-                    <li><a class="dropdown-item" href="#">Antenne</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#" style="color:white">Contact</a>
-                </li>
-              </ul>
+    </div>
+      
+      <!-- navebar -->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #1d1d1d;">
+        <div class="container-fluid">   
+        <img class="navbar-text d-none d-lg-block" src="imgBC.png" alt="" width="30" height="45" style="margin-right: 20px;"> 
+        <span class="navbar-text d-none d-lg-block">
+          BIENES CONNECT
+        </span>
+                
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars text-white"></i>
+          </button>
+          <span class="navbar-text d-lg-none">BIENES CONNECT</span>        
+          <img class="d-lg-none" src="imgBC.png" alt="" width="30" height="30">
+          <div class="collapse navbar-collapse justify-content-center" id="navbarText">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#accueil">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#videosurveillance">Vidéosurveillance</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#ca">Controle d'accès</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#elec">Electricité</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#interphone">Interphone</a>
+              </li>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#domotique">Domotique</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#antenne">Antenne</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Nos réalisation
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Vidéo surveillance</a></li>
+                  <li><a class="dropdown-item" href="#">Controle d'accès</a></li>
+                  <li><a class="dropdown-item" href="#">Electricité</a></li>
+                  <li><a class="dropdown-item" href="#">Interphone</a></li>
+                  <li><a class="dropdown-item" href="#">Domotique</a></li>
+                  <li><a class="dropdown-item" href="#">Antenne</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
       
-    </div><!-- container -->
+      <div id="accueil" class="pageL" style="display:block">
+      <!-- header -->
+        <header class="bg-dark text-white py-3">
+          <div class="container text-center">
+            <h1 class="fw-bold">Votre Partenaire en Installation et Dépannage</h1>
+            <p>Spécialiste en vidéosurveillance, contrôle d'accès, interphone, électricité, domotique et antennes.</p>
+          </div>
+        </header>
 
+        <!-- container-->
+        <div class="container" >
+          <!-- section -->
+          <section class="bg-light py-5">
+            <div class="container">
+              <h2 class="text-center fw-bold mb-4">Des Solutions pour le Collectif, le Tertiaire et le Particulier</h2>
+                <div class="row">
+                  <div class="col-md-4 text-center">
+                    <i class="fas fa-video fa-3x text-primary mb-3"></i>
+                    <h3>Vidéosurveillance</h3>
+                    <p>Installation et dépannage de systèmes de vidéosurveillance pour protéger vos biens et vos proches.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <i class="fas fa-door-closed fa-3x text-success mb-3"></i>
+                    <h3>Contrôle d'accès</h3>
+                    <p>Des solutions modernes et sécurisées pour contrôler les accès à vos locaux et habitations.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+                    <h3>Électricité</h3>
+                    <p>Installation et dépannage de vos installations électriques, conformes aux normes en vigueur.</p>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-md-4 text-center">
+                    <i class="fas fa-broadcast-tower fa-3x text-info mb-3"></i>
+                    <h3>Antennes et Paraboles</h3>
+                    <p>Réglage, dépannage et installation d'antennes et paraboles pour une réception optimale.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <i class="fas fa-home fa-3x text-danger mb-3"></i>
+                    <h3>Domotique</h3>
+                    <p>Automatisez et contrôlez votre maison grâce à nos solutions domotiques innovantes.</p>
+                  </div>
+                  <div class="col-md-4 text-center">
+                    <i class="fas fa-phone fa-3x text-secondary mb-3"></i>
+                    <h3>Interphones</h3>
+                    <p>Installation et dépannage de systèmes d'interphone pour une communication simplifiée et sécurisée.</p>
+                  </div>
+                </div>
+              </div>
+          </section>
+
+          <section class="py-5">
+            <div class="container ">
+              <h2 class="text-center fw-bold mb-4">Pourquoi Nous Choisir ?</h2>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item ">✔ Expertise locale à Toulouse et dans les villes environnantes</li>
+                <li class="list-group-item">✔ Intervention rapide pour vos dépannages urgents</li>
+                <li class="list-group-item">✔ Matériel de qualité et respect des normes</li>
+                <li class="list-group-item">✔ Plus de 10 ans d'expérience dans le domaine</li>
+                <li class="list-group-item">✔ Des solutions sur-mesure pour chaque client</li>
+              </ul>
+            </div>
+          </section>
+
+          <!-- Section Contact -->
+          <section class="contact-form-section py-5 bg-light" >
+            <div class="container">
+              <h2 class="text-center fw-bold mb-4">Nous Contacter</h2>
+              <p class="text-center mb-4">Pour toute demande, vous pouvez nous contacter via le formulaire ci-dessous. Nous vous répondrons dans les plus brefs délais.</p>
+              
+              <!-- Formulaire de contact -->
+              <form action="mailto:contact@votreemail.com" method="POST" enctype="text/plain" class="mx-auto" style="max-width: 600px;">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <div class="mb-3 text-center">
+                  <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </div>
+
+              </form>
+            </div>
+          </section>
+       </div>
+      </div><!-- accueil -->
+
+
+      <div><!-- vidéosurveillance -->
+        <section class="container py-5 px-4 pageL justify-content-center" id="videosurveillance"> 
+          <h1 class="text-center mb-4">Vidéosurveillance</h1>
+
+          <!-- Image à ajouter plus tard -->
+          <div class="text-center">
+              <img src="imgCam.jpg" alt="Vidéosurveillance" class="hero-image">
+          </div>
+
+          <h2 class="section-title">Nos Services</h2>
+          <p>
+              Nous proposons des solutions complètes de vidéosurveillance adaptées à tous les types de bâtiments : immeubles collectifs, locaux commerciaux et habitations privées. 
+              Que vous soyez un particulier, une entreprise ou une copropriété, nous assurons l'installation, l'entretien et la maintenance des systèmes de vidéosurveillance pour garantir votre sécurité.
+          </p>
+
+          <h3>Types de Locaux Concernés</h3>
+          <p>Nous intervenons dans différents types de bâtiments pour offrir des solutions de vidéosurveillance sur mesure.</p>
+          <ul>
+              <li><strong>Immeubles Collectifs</strong> : Sécurisation des parties communes, halls d'entrée, accès aux étages et parkings.</li>
+              <li><strong>Locaux Commerciaux</strong> : Protection des magasins, bureaux, entrepôts et espaces professionnels.</li>
+              <li><strong>Habitations Privées</strong> : Sécurisation des maisons et appartements pour garantir votre tranquillité d'esprit.</li>
+          </ul>
+
+          <h3>Nos Marques Partenaires</h3>
+          <p>
+              Nous travaillons avec les meilleures marques du marché pour vous fournir des équipements de haute qualité et fiables. Voici quelques-unes des marques que nous installons :
+          </p>
+          <ul>
+              <li><strong>Dahua</strong> : Caméras haute définition et solutions IP professionnelles.</li>
+              <li><strong>Hikvision</strong> : Leader dans les systèmes de vidéosurveillance, offrant des solutions variées adaptées à tous les besoins.</li>
+              <li><strong>Bosch</strong> : Fournisseur d'équipements de vidéosurveillance professionnels, idéaux pour les entreprises et les particuliers.</li>
+              <li><strong>Axis Communications</strong> : Caméras IP de haute qualité pour des installations professionnelles.</li>
+              <li><strong>Uniview (UNV)</strong> : Solutions de vidéosurveillance abordables avec des caméras IP performantes.</li>
+              <li><strong>Vivotek</strong> : Spécialisé dans les caméras IP et les solutions de surveillance intelligentes.</li>
+              <li><strong>Hanwha Techwin (Wisenet)</strong> : Fournisseur d'équipements de vidéosurveillance de qualité pour les entreprises et particuliers.</li>
+              <li><strong>FLIR Systems</strong> : Caméras thermiques et infrarouges adaptées aux environnements difficiles.</li>
+          </ul>
+
+          <h3>Nos Services d'Installation et d'Entretien</h3>
+          <p>
+              Nous ne nous contentons pas d'installer des systèmes de vidéosurveillance. Nous offrons également des services d'entretien et de maintenance pour garantir la performance optimale de votre système au fil du temps. Que ce soit pour un contrôle de routine, une mise à jour du système ou un dépannage, nos techniciens sont là pour vous accompagner.
+          </p>
+
+          <p>
+              N'hésitez pas à nous contacter pour obtenir un devis personnalisé ou pour toute question concernant nos services de vidéosurveillance.
+          </p>
+      </section>
+
+      </div><!-- vidéosurveillance -->
+
+      <div><!-- ca -->
+        <section  class="container py-5 px-4 pageL justify-content-center" id="ca">
+          <h1 class="text-center mb-4">Contrôle d'Accès</h1>
+
+      <!-- Image à ajouter plus tard -->
+          <div class="text-center">
+              <img src="imgCA.jpg" alt="Contrôle d'accès" class="hero-image">
+              </div>
+
+              <h2 class="section-title">Nos Services</h2>
+              <p>
+                  Nous proposons des solutions de contrôle d'accès modernes et performantes pour sécuriser vos espaces, qu'il s'agisse d'immeubles résidentiels, de locaux commerciaux, ou d'habitations privées. 
+                  Nos systèmes sont conçus pour offrir une gestion simplifiée des entrées et des sorties, avec des équipements robustes et fiables adaptés à vos besoins.
+              </p>
+
+              <h3>Types de Locaux Concernés</h3>
+              <p>Nos solutions de contrôle d'accès s'adaptent à différents types d'espaces :</p>
+              <ul>
+                  <li><strong>Immeubles Collectifs</strong> : Sécurisation des accès aux halls d'entrée, garages, et parties communes.</li>
+                  <li><strong>Locaux Commerciaux</strong> : Gestion des entrées dans les bureaux, magasins et entrepôts.</li>
+                  <li><strong>Habitations Privées</strong> : Contrôle d'accès pour les portails, portes d'entrée et espaces privés.</li>
+              </ul>
+
+              <h3>Nos Marques Partenaires</h3>
+              <p>
+                  Nous travaillons avec des marques leaders dans le domaine du contrôle d'accès pour garantir des équipements de qualité supérieure. Voici quelques-unes des marques avec lesquelles nous collaborons :
+              </p>
+              <ul>
+                  <li><strong>Urmet</strong> : Solutions modernes de contrôle d'accès et d'interphonie pour immeubles résidentiels et locaux professionnels.</li>
+                  <li><strong>Intratone</strong> : Systèmes de contrôle d'accès sans fil et gestion à distance innovante.</li>
+                  <li><strong>Comelit</strong> : Équipements design et performants pour le contrôle d'accès et la sécurité.</li>
+                  <li><strong>Hexact</strong> : Solutions robustes et efficaces pour la gestion des accès dans les environnements exigeants.</li>
+                  <li><strong>CDVI</strong> : Produits de contrôle d'accès professionnels, alliant sécurité et simplicité d'utilisation.</li>
+              </ul>
+
+              <h3>Nos Services d'Installation et d'Entretien</h3>
+              <p>
+                  En plus de l'installation de systèmes de contrôle d'accès, nous proposons des services d'entretien et de maintenance pour garantir le bon fonctionnement de vos équipements. Notre équipe de techniciens qualifiés est à votre disposition pour assurer des interventions rapides et efficaces, que ce soit pour des contrôles de routine, des mises à jour ou des dépannages.
+              </p>
+
+              <p>
+                  Contactez-nous pour obtenir un devis personnalisé ou pour en savoir plus sur nos solutions de contrôle d'accès adaptées à vos besoins.
+              </p>
+            </section>
+        </div><!-- ca -->
+
+        <div><!-- interphone -->
+          <section class="container py-5 px-4 pageL justify-content-center" id="interphone">
+            <h1 class="text-center mb-4">Interphones</h1>
+
+            <!-- Image à ajouter plus tard -->
+            <div class="text-center">
+                <img src="imgInterphone.png" alt="Interphone" class="hero-image">
+            </div>
+
+            <h2 class="section-title">Nos Services</h2>
+            <p>
+                Nous proposons des solutions modernes et performantes pour l'installation et l'entretien d'interphones, adaptés aux immeubles collectifs, locaux professionnels et habitations privées. 
+                Nos systèmes garantissent une communication efficace et une gestion sécurisée des accès, pour une tranquillité d'esprit au quotidien.
+            </p>
+
+            <h3>Types de Locaux Concernés</h3>
+            <p>Nos solutions d'interphonie s'adaptent à tous les environnements :</p>
+            <ul>
+                <li><strong>Immeubles Collectifs</strong> : Interphones audio et vidéo pour les halls d'entrée et les accès sécurisés.</li>
+                <li><strong>Locaux Commerciaux</strong> : Gestion des communications et accès pour bureaux, magasins et entreprises.</li>
+                <li><strong>Habitations Privées</strong> : Systèmes d'interphone pour portails, portes d'entrée et résidences.</li>
+            </ul>
+
+            <h3>Nos Marques Partenaires</h3>
+            <p>
+                Nous travaillons avec des fabricants reconnus pour leur expertise dans les systèmes d'interphonie. Voici quelques-unes des marques que nous installons :
+            </p>
+            <ul>
+                <li><strong>Urmet</strong> : Solutions innovantes et design pour les immeubles et habitations.</li>
+                <li><strong>Comelit</strong> : Systèmes audio et vidéo élégants, combinant performance et esthétique.</li>
+                <li><strong>Intratone</strong> : Solutions connectées pour une gestion d'accès à distance simplifiée.</li>
+                <li><strong>BTicino</strong> : Interphones performants, adaptés à tous les besoins.</li>
+                <li><strong>Fermax</strong> : Spécialiste des systèmes d'interphonie pour immeubles et maisons.</li>
+                <li><strong>Aiphone</strong> : Solutions haut de gamme pour une communication fiable et sécurisée.</li>
+            </ul>
+
+            <h3>Nos Services d'Installation et d'Entretien</h3>
+            <p>
+                Nous assurons l'installation de nouveaux systèmes d'interphone, ainsi que la rénovation et l'entretien des équipements existants. Nos techniciens qualifiés garantissent des interventions rapides et efficaces pour maintenir vos systèmes en parfait état de fonctionnement.
+            </p>
+
+            <p>
+                Pour un devis personnalisé ou pour toute question concernant nos solutions d'interphonie, n'hésitez pas à nous contacter.
+            </p>
+        </section>
+      </div><!-- interphone -->
+
+      <div><!-- elec -->
+        <section class="container py-5 px-4 pageL justify-content-center" id="elec">
+            <h1 class="text-center mb-4">Électricité</h1>
+
+            <div class="text-center">
+                <img src="imgElec.jpg" alt="Électricité" class="hero-image">
+            </div>
+
+            <h2 class="section-title">Nos Services</h2>
+            <p>
+                Nous proposons des services d'installation, de rénovation et de maintenance électrique pour répondre aux besoins des particuliers, des entreprises et des copropriétés. 
+                Nos solutions assurent la sécurité et l’efficacité de vos systèmes électriques, adaptés aux normes en vigueur.
+            </p>
+
+            <h3>Types de Locaux Concernés</h3>
+            <p>Nous intervenons sur différents types de bâtiments :</p>
+            <ul>
+                <li><strong>Immeubles Collectifs</strong> : Rénovation des tableaux électriques, installation des circuits communs et éclairage des parties communes.</li>
+                <li><strong>Locaux Commerciaux</strong> : Installation des réseaux électriques pour bureaux, magasins, ateliers et entrepôts.</li>
+                <li><strong>Habitations Privées</strong> : Mise aux normes, installation et entretien des systèmes électriques pour maisons et appartements.</li>
+            </ul>
+
+            <h3>Nos Marques Partenaires</h3>
+            <p>
+                Nous travaillons avec des fabricants reconnus pour la qualité et la durabilité de leurs équipements électriques. Voici quelques-unes des marques que nous utilisons :
+            </p>
+            <ul>
+                <li><strong>Legrand</strong> : Leader mondial des solutions électriques pour les installations résidentielles et professionnelles.</li>
+                <li><strong>Schneider Electric</strong> : Produits électriques fiables, innovants et écologiques.</li>
+                <li><strong>Hager</strong> : Solutions pour les tableaux électriques et systèmes de gestion d'énergie.</li>
+                <li><strong>ABB</strong> : Spécialiste des solutions électriques et de l’automatisation.</li>
+                <li><strong>Siemens</strong> : Équipements électriques performants pour les particuliers et professionnels.</li>
+                <li><strong>Philips</strong> : Leader en éclairage LED et solutions connectées.</li>
+            </ul>
+
+            <h3>Nos Services d'Installation et d'Entretien</h3>
+            <p>
+                Nous offrons une gamme complète de services électriques, incluant l'installation de nouveaux équipements, la rénovation d'anciennes installations, et la maintenance préventive ou corrective. Notre équipe expérimentée est équipée pour répondre à vos besoins, tout en respectant les normes de sécurité en vigueur.
+            </p>
+
+            <p>
+                Faites appel à nous pour des prestations de qualité, adaptées à vos exigences spécifiques. Contactez-nous pour un devis ou pour toute question relative à vos installations électriques.
+            </p>
+          </section>
+      </div><!-- elec -->
+
+      <div><!-- domotique -->
+        <section class="container py-5 px-4 pageL justify-content-center" id="domotique">
+          <h1 class="text-center mb-4">Domotique</h1>
+
+          <!-- Image à ajouter plus tard -->
+          <div class="text-center">
+              <img src="imgDomotique.png" alt="Domotique" class="hero-image">
+          </div>
+
+          <h2 class="section-title">Nos Services</h2>
+          <p>
+              Simplifiez votre quotidien avec nos solutions de domotique. Nous installons des systèmes connectés pour améliorer le confort, la sécurité et l'efficacité énergétique de vos espaces, qu'il s'agisse de maisons, d'appartements ou de locaux professionnels.
+              De la commande à distance des équipements à l'automatisation complète, nous vous accompagnons dans la transformation de vos espaces en véritables habitats intelligents.
+          </p>
+
+          <h3>Applications de la Domotique</h3>
+          <p>Voici quelques exemples de ce que nous proposons en domotique :</p>
+          <ul>
+              <li><strong>Éclairage Intelligent</strong> : Contrôle à distance et automatisation des éclairages pour un confort optimal et des économies d'énergie.</li>
+              <li><strong>Gestion des Volets et Stores</strong> : Motorisation et contrôle centralisé des volets roulants et stores.</li>
+              <li><strong>Chauffage et Climatisation</strong> : Thermostats connectés pour une gestion efficace de la température.</li>
+              <li><strong>Sécurité</strong> : Caméras, alarmes et détecteurs connectés pour une surveillance accrue.</li>
+              <li><strong>Commandes Vocales</strong> : Intégration avec des assistants vocaux tels qu'Amazon Alexa, Google Assistant et Apple HomeKit.</li>
+          </ul>
+
+          <h3>Nos Marques Partenaires</h3>
+          <p>
+              Nous collaborons avec des marques de renom pour garantir des systèmes fiables, innovants et faciles à utiliser. Voici quelques-unes de nos marques partenaires :
+          </p>
+          <ul>
+              <li><strong>Somfy</strong> : Leader dans l'automatisation des volets, stores et solutions connectées.</li>
+              <li><strong>Netatmo</strong> : Thermostats connectés et solutions de sécurité intelligentes.</li>
+              <li><strong>Legrand</strong> : Équipements domotiques pour la maison connectée, incluant éclairages et prises intelligentes.</li>
+              <li><strong>Schneider Electric</strong> : Systèmes domotiques pour la gestion de l'énergie et la sécurité.</li>
+              <li><strong>Fibaro</strong> : Modules connectés pour le contrôle complet de votre maison.</li>
+              <li><strong>Philips Hue</strong> : Éclairage intelligent pour une ambiance personnalisée.</li>
+          </ul>
+
+          <h3>Nos Services d'Installation et de Support</h3>
+          <p>
+              Nous prenons en charge l'installation de systèmes domotiques complets, l'intégration avec vos équipements existants, et leur maintenance. Que ce soit pour une maison individuelle ou un local commercial, nos solutions sont adaptées à vos besoins et à votre budget.
+          </p>
+
+          <p>
+              Vous avez un projet de domotique ? Contactez-nous pour un devis ou pour discuter de la meilleure façon de rendre vos espaces intelligents et connectés.
+          </p>
+      </section>
+
+      </div><!-- domotique -->
+
+      <div><!-- antenne -->
+        <section class="container py-5 px-4 pageL justify-content-center" id="antenne">
+          <h1 class="text-center mb-4">Antennes et Paraboles</h1>
+
+          <!-- Image à ajouter plus tard -->
+          <div class="text-center">
+              <img src="imgAntenne.png" alt="Antennes et Paraboles" class="hero-image">
+          </div>
+
+          <h2 class="section-title">Nos Services</h2>
+          <p>
+              Nous offrons des solutions complètes pour l'installation, l'entretien et la maintenance des antennes et paraboles. 
+              Que vous soyez un particulier, une copropriété ou une entreprise, nous veillons à ce que vos équipements de réception TV soient performants et adaptés à vos besoins.
+          </p>
+
+          <h3>Types de Locaux Concernés</h3>
+          <p>Nos services s'adressent à divers types de bâtiments :</p>
+          <ul>
+              <li><strong>Immeubles Collectifs</strong> : Installation et réglage des antennes collectives pour une réception optimale.</li>
+              <li><strong>Habitations Privées</strong> : Solutions sur mesure pour maisons individuelles et appartements.</li>
+              <li><strong>Locaux Commerciaux</strong> : Installation d'antennes ou de paraboles pour hôtels, restaurants ou bureaux nécessitant des services de diffusion.</li>
+          </ul>
+
+          <h3>Nos Marques Partenaires</h3>
+          <p>
+              Nous travaillons avec des marques leaders dans le domaine des équipements de réception TV, garantissant des performances et une fiabilité exceptionnelles :
+          </p>
+          <ul>
+              <li><strong>Triax</strong> : Solutions innovantes pour la réception satellite et terrestre.</li>
+              <li><strong>Fuba</strong> : Réputé pour ses antennes et paraboles robustes et performantes.</li>
+              <li><strong>Hirschmann</strong> : Équipements de réception TV haute qualité pour usage résidentiel et professionnel.</li>
+              <li><strong>Televes</strong> : Spécialiste des solutions de réception et de distribution de signaux TV.</li>
+              <li><strong>Fransat</strong> : Offres adaptées pour la réception des chaînes satellites françaises sans abonnement.</li>
+              <li><strong>Canal+</strong> : Installation et configuration de paraboles pour les services de diffusion premium.</li>
+          </ul>
+
+          <h3>Nos Services d'Installation et d'Entretien</h3>
+          <p>
+              Nous assurons l'installation des antennes terrestres et paraboles satellites, ainsi que leur maintenance. 
+              Nos techniciens expérimentés interviennent pour garantir une réception optimale et résoudre rapidement tout problème technique.
+          </p>
+
+          <p>
+              N'hésitez pas à nous contacter pour un devis ou pour toute question relative à vos besoins en antennes ou paraboles.
+          </p>
+      </section>
+
+      </div><!-- antenne -->
+
+      <div><!-- contact2 -->
+           <section class="contact-form-section py-5 bg-light pageL" id="contact" >
+            <div class="container">
+              <h2 class="text-center fw-bold mb-4">Nous Contacter</h2>
+              <p class="text-center mb-4">Pour toute demande, vous pouvez nous contacter via le formulaire ci-dessous. Nous vous répondrons dans les plus brefs délais.</p>
+              
+              <!-- Formulaire de contact -->
+              <form action="mailto:contact@votreemail.com" method="POST" enctype="text/plain" class="mx-auto" style="max-width: 600px;">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nom</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+
+                <div class="mb-3">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+
+                <div class="mb-3 text-center">
+                  <button type="submit" class="btn btn-primary">Envoyer le message</button>
+                </div>
+
+              </form>
+          </section>
+      </div><!-- Contact2 -->
+
+      <footer class="bg-dark text-light pt-4">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Qui sommes-nous -->
+                <div class="col-md-4">
+                    <h5>Qui sommes-nous</h5>
+                    <p>
+                        Nous sommes une entreprise dédiée à fournir des solutions numériques innovantes
+                        pour améliorer votre quotidien.
+                    </p>
+                </div>
+                
+                <!-- Contact -->
+                <div class="col-md-4">
+                    <h5>Contact</h5>
+                    <p>Adresse : 123 Rue Imaginaire, Paris, France</p>
+                    <p>Email : contact@example.com</p>
+                    <p>Téléphone : +33 1 23 45 67 89</p>
+                </div>
+                
+                <!-- Réseaux sociaux -->
+                <div class="col-md-4">
+                    <h5>Suivez-nous</h5>
+                    <div>
+                        <i class="bi bi-instagram instagram-icon me-2"></i>
+                        <a href="#" class="text-light">Instagram</a>
+                    </div>
+                    <div>
+                        <i class="bi bi-facebook facebook-icon me-2"></i>
+                        <a href="#" class="text-light">Facebook</a>
+                    </div>
+                    <div>
+                        <i class="bi bi-linkedin linkedin-icon me-2"></i>
+                        <a href="#" class="text-light">LinkedIn</a>
+                    </div>
+                    <div>
+                        <i class="bi bi-twitter twitter-icon me-2"></i>
+                        <a href="#" class="text-light">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col text-center">
+                    <p class="mb-0">&copy; 2024 Bienes Connect.<br> Tous droits réservés.</p>
+                    <br>
+                    <p class="mb-0">Site créé par Laurent</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    </div><!-- div body -->
   <!-- Bootstrap Bundle with Popper -->  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"> 
   </script>
-
+<script
+  src="https://code.jquery.com/jquery-3.7.1.js"
+  integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+  crossorigin="anonymous"></script>
   <script>
-    /*/
-  document.addEventListener('DOMContentLoaded', function () {
-    const currentUrl = window.location.href;
-    const navLinks = document.querySelectorAll('.nav-link');
+    const popup = document.getElementById('popup');
+        const closePopup = document.getElementById('closePopup');
 
-    navLinks.forEach(link => {
-      if (link.href === currentUrl) {
-        link.classList.add('nav-link active');
-      } else {
-        link.classList.remove('active');
-      }
+        // Afficher le popup au chargement
+        window.onload = () => {
+            popup.classList.add('show');
+        };
+
+        // Fermer le popup lorsqu'on clique sur le bouton
+        closePopup.addEventListener('click', () => {
+            popup.classList.remove('show');
+        });
+
+
+    $(document).ready(function() {
+        $('.nav-link').click(function(e) {
+        e.preventDefault(); // Empêche le rechargement de la page
+        let pageId = $(this).attr('href').split('#')[1];
+    
+        $('.pageL').css('display', 'none'); // Cache toutes les pages
+        $('#' + pageId).css('display', 'block'); // Affiche la page sélectionnée
+        });
     });
-  });/*/
+    $('.nav-item a').on('click', () => $('button.navbar-toggler').click());
+
 </script>
 
   </body>
