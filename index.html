@@ -132,36 +132,48 @@
               <h2 class="text-center fw-bold mb-4">Des Solutions pour le Collectif, le Tertiaire et le Particulier</h2>
                 <div class="row">
                   <div class="col-md-4 text-center">
-                    <i class="fas fa-video fa-3x text-primary mb-3"></i>
-                    <h3>Vidéosurveillance</h3>
-                    <p>Installation et dépannage de systèmes de vidéosurveillance pour protéger vos biens et vos proches.</p>
+                    <a href="#videosurveillance" class="nav-link" style="text-decoration: none;color: inherit;">
+                      <i class="fas fa-video fa-3x text-primary mb-3"></i>
+                      <h3>Vidéosurveillance</h3>
+                      <p>Installation et dépannage de systèmes de vidéosurveillance pour protéger vos biens et vos proches.</p>
+                    </a>
                   </div>
                   <div class="col-md-4 text-center">
-                    <i class="fas fa-door-closed fa-3x text-success mb-3"></i>
-                    <h3>Contrôle d'accès</h3>
-                    <p>Des solutions modernes et sécurisées pour contrôler les accès à vos locaux et habitations.</p>
+                    <a href="#ca" class="nav-link" style="text-decoration: none;color: inherit;">
+                      <i class="fas fa-door-closed fa-3x text-success mb-3"></i>
+                      <h3>Contrôle d'accès</h3>
+                      <p>Des solutions modernes et sécurisées pour contrôler les accès à vos locaux et habitations.</p>
+                    </a>
                   </div>
                   <div class="col-md-4 text-center">
-                    <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
-                    <h3>Électricité</h3>
-                    <p>Installation et dépannage de vos installations électriques, conformes aux normes en vigueur.</p>
+                    <a href="#elec" class="nav-link" style="text-decoration: none;color: inherit;">
+                      <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+                      <h3>Électricité</h3>
+                      <p>Installation et dépannage de vos installations électriques, conformes aux normes en vigueur.</p>
+                    </a>  
                   </div>
                 </div>
                 <div class="row mt-4">
                   <div class="col-md-4 text-center">
-                    <i class="fas fa-broadcast-tower fa-3x text-info mb-3"></i>
-                    <h3>Antennes et Paraboles</h3>
-                    <p>Réglage, dépannage et installation d'antennes et paraboles pour une réception optimale.</p>
+                    <a href="#antenne" class="nav-link" style="text-decoration: none;color: inherit;">
+                      <i class="fas fa-broadcast-tower fa-3x text-info mb-3"></i>
+                      <h3>Antennes et Paraboles</h3>
+                      <p>Réglage, dépannage et installation d'antennes et paraboles pour une réception optimale.</p>
+                    </a>  
                   </div>
                   <div class="col-md-4 text-center">
-                    <i class="fas fa-home fa-3x text-danger mb-3"></i>
-                    <h3>Domotique</h3>
-                    <p>Automatisez et contrôlez votre maison grâce à nos solutions domotiques innovantes.</p>
+                    <a href="#domotique" class="nav-link" style="text-decoration: none;color: inherit;">
+                      <i class="fas fa-home fa-3x text-danger mb-3"></i>
+                      <h3>Domotique</h3>
+                      <p>Automatisez et contrôlez votre maison grâce à nos solutions domotiques innovantes.</p>
+                    </a>    
                   </div>
                   <div class="col-md-4 text-center">
-                    <i class="fas fa-phone fa-3x text-secondary mb-3"></i>
-                    <h3>Interphones</h3>
-                    <p>Installation et dépannage de systèmes d'interphone pour une communication simplifiée et sécurisée.</p>
+                    <a href="#interphone" class="nav-link" style="text-decoration: none;color: inherit;">
+                      <i class="fas fa-phone fa-3x text-secondary mb-3"></i>
+                      <h3>Interphones</h3>
+                      <p>Installation et dépannage de systèmes d'interphone pour une communication simplifiée et sécurisée.</p>
+                    </a>  
                   </div>
                 </div>
               </div>
@@ -502,7 +514,7 @@
 
       </div><!-- antenne -->
 
-      <div>
+      <div><!-- contact2 -->
            <section class="contact-form-section py-5 bg-light pageL" id="contact" >
             <div class="container">
               <h2 class="text-center fw-bold mb-4">Nous Contacter</h2>
@@ -531,7 +543,7 @@
 
               </form>
           </section>
-      </div>
+      </div><!-- Contact2 -->
 
       <footer class="bg-dark text-light pt-4">
         <div class="container">
@@ -600,22 +612,24 @@
         window.onload = () => {
             popup.classList.add('show');
         };
+
         closePopup.addEventListener('click', () => {
             popup.classList.remove('show');
         });
-    
+
+
     $(document).ready(function() {
         $('.nav-link').click(function(e) {
-        e.preventDefault(); 
+        e.preventDefault(); /
         let pageId = $(this).attr('href').split('#')[1];
     
         $('.pageL').css('display', 'none'); 
         $('#' + pageId).css('display', 'block'); 
-            window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         });
+
     });
     $('.nav-item a').on('click', () => $('button.navbar-toggler').click());
-
 </script>
 
   </body>
