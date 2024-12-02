@@ -502,7 +502,7 @@
 
       </div><!-- antenne -->
 
-      <div><!-- contact2 -->
+      <div>
            <section class="contact-form-section py-5 bg-light pageL" id="contact" >
             <div class="container">
               <h2 class="text-center fw-bold mb-4">Nous Contacter</h2>
@@ -531,7 +531,7 @@
 
               </form>
           </section>
-      </div><!-- Contact2 -->
+      </div>
 
       <footer class="bg-dark text-light pt-4">
         <div class="container">
@@ -586,6 +586,7 @@
     </footer>
 
     </div><!-- div body -->
+    
   <!-- Bootstrap Bundle with Popper -->  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"> 
   </script>
@@ -596,25 +597,21 @@
   <script>
     const popup = document.getElementById('popup');
         const closePopup = document.getElementById('closePopup');
-
-        // Afficher le popup au chargement
         window.onload = () => {
             popup.classList.add('show');
         };
-
-        // Fermer le popup lorsqu'on clique sur le bouton
         closePopup.addEventListener('click', () => {
             popup.classList.remove('show');
         });
-
-
+    
     $(document).ready(function() {
         $('.nav-link').click(function(e) {
-        e.preventDefault(); // Empêche le rechargement de la page
+        e.preventDefault(); 
         let pageId = $(this).attr('href').split('#')[1];
     
-        $('.pageL').css('display', 'none'); // Cache toutes les pages
-        $('#' + pageId).css('display', 'block'); // Affiche la page sélectionnée
+        $('.pageL').css('display', 'none'); 
+        $('#' + pageId).css('display', 'block'); 
+            window.scrollTo(0, 0);
         });
     });
     $('.nav-item a').on('click', () => $('button.navbar-toggler').click());
